@@ -13,7 +13,12 @@ const getItems = async (req, res) =>{
 const GetItem = (req, res) =>{
 
 }
-const CreateItem = (req, res) =>{
+const CreateItem =  async  (req, res) =>{
+    const {body} = req  
+    console.log(body)
+    const data = await tracksModel.create(body)
+
+    res.send(data)
 
 }
 const UpdateItem = (req, res) =>{
