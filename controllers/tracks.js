@@ -7,8 +7,9 @@ const getItems = async (req, res) =>{
 
     try{
         
+        const user = req.user
             const data = await tracksModel.find({})
-            res.send({data})
+            res.send({data, user})
 
     }catch(e)
     {
